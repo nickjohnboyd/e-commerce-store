@@ -4,7 +4,7 @@ import CartList from './CartList';
 class CartPage extends React.Component {
 	render() {
 		return (
-			<div className="CartPage">
+			<div className="CartPage main">
 				<CartList />
 			</div>
 		);

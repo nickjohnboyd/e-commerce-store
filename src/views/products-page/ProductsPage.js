@@ -4,7 +4,7 @@ import ProductsList from './ProductsList';
 class ProductsPage extends React.Component {
 	render() {
 		return (
-			<div className="ProductsPage">
+			<div className="ProductsPage main">
 				<ProductsList />
 			</div>
 		);
