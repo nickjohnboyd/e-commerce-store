@@ -1,4 +1,6 @@
 import React from 'react';
+import store from './store/index';
+
 import MenuBar from './components/MenuBar';
 import Footer from './components/Footer';
 import './App.css';
@@ -39,7 +41,11 @@ class App extends React.Component {
     } else if (!isLoaded) {
       return <div>Loading...</div>;
     } else {
-      console.log(products);
+      store.dispatch({
+        type: 'CREATE_PRODUCTS',
+        products
+      });
+      console.log(store.getState());
       return (
         <div className="App">
           <div className="content">
@@ -48,15 +54,6 @@ class App extends React.Component {
           <Footer />
         </div>
       );
-      // return (
-      //   <ul>
-      //     {products.map(product => (
-      //       <li key={product.id}>
-      //         {product.title} {product.price}
-      //       </li>
-      //     ))}
-      //   </ul>
-      // );
     }
   }
 };
