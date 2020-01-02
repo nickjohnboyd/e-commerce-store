@@ -10,42 +10,72 @@ class App extends React.Component {
     super(props)
     this.state = {
       error: null,
-      isLoaded: false,
-      products: []
+      prodIsLoaded: false,
+      products: [],
+      catIsLoaded: false,
+      categories: []
     };
   }
 
   componentDidMount() {
+    //Get products
     fetch("https://my-json-server.typicode.com/tdmichaelis/typicode/products")
       .then(res => res.json())
       .then(
         (result) => {
           this.setState({
-            isLoaded: true,
+            prodIsLoaded: true,
             products: result
           });
         },
         (error) => {
           this.setState({
-            isLoaded: true,
+            prodIsLoaded: true,
+            error
+          });
+        }
+      )
+    // Get categories 
+    fetch("https://my-json-server.typicode.com/tdmichaelis/typicode/categories")
+      .then(res => res.json())
+      .then(
+        (result) => {
+          this.setState({
+            catIsLoaded: true,
+            categories: result
+          });
+        },
+        (error) => {
+          this.setState({
+            catIsLoaded: true,
             error
           });
         }
       )
   }
 
+  runDispatch = (products, categories) => {
+    store.dispatch({
+      type: 'CREATE_PRODUCTS',
+      products
+    });
+    store.dispatch({
+      type: 'CREATE_CATEGORIES',
+      categories
+    });
+  }
+
   render() {
-    const { error, isLoaded, products } = this.state;
+    const { error, prodIsLoaded, catIsLoaded, products, categories } = this.state;
     if (error) {
       return <div>Error: {error.message}</div>;
-    } else if (!isLoaded) {
+    } else if (!prodIsLoaded || !catIsLoaded) {
       return <div>Loading...</div>;
     } else {
-      store.dispatch({
-        type: 'CREATE_PRODUCTS',
-        products
-      });
+      
+      this.runDispatch(products, categories);
       console.log(store.getState());
+
       return (
         <div className="App">
           <div className="content">

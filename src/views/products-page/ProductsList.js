@@ -4,9 +4,18 @@ import ProductItem from './ProductItem';
 
 class ProductsList extends React.Component {
 	buildProducts = () => {
-		const products = store.getState();
+		const products = store.getState().products;
 		return products.map((product, idx) => (
-			<ProductItem title={product.title} price={product.price} key={idx} />
+			<ProductItem
+				id={product.id}
+				title={product.title}
+				description={product.description}
+				img={product.img}
+				price={product.price}
+				rating={product.rating}
+				category={product.category}
+				key={idx}
+			/>
 		));
 	}
 	render() {
