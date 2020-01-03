@@ -3,7 +3,7 @@ import store from './store/index';
 
 import MenuBar from './components/MenuBar';
 import Footer from './components/Footer';
-import './App.css';
+import './css/style.css';
 
 class App extends React.Component {
   constructor(props) {

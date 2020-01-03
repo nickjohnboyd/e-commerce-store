@@ -1,0 +1,91 @@
+.main {
+  height: 800px;
+}
+.home-page {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  background-image: url(.././images/macbook-pro-table.jpeg);
+	background-size: cover;
+	
+	.h-info {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		justify-content: center;
+		background-color: #ffffff;
+		padding: 25px 40px;
+		border-radius: 8px;
+	}
+}
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+	padding: 0 15px;
+	
+	.nav-item {
+		width: 200px;
+		text-align: center;
+		color: #000000;
+		font-size: 15px;
+	}
+	.nav-title {
+		font-size: 20px;
+	}
+	.right-nav {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	.nav-icon {
+		font-size: 20px;
+		color: #000000;
+		margin: 10px;
+	}
+}
+.Footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+}
+.ProductsPage {
+  padding: 30px 0px;
+  background-color: #e6e6e6;
+}
+.ProductsList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.ProductItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 280px;
+  color: #000000;
+	margin: 30px;
+	
+	.product-img-cont {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		width: 280px;
+		height: 280px;
+		margin: 15px;
+		background-color: #ffffff;
+		border-radius: 5px;
+		padding: 20px;
+
+		.product-img {
+			height: 150px;
+		}
+	}
+	.product-title {
+		text-align: center;
+	}
+}

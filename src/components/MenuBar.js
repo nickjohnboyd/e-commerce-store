@@ -10,14 +10,12 @@ import HomePage from '../views/home-page/HomePage';
 import ProductsPage from '../views/products-page/ProductsPage';
 import CartPage from '../views/cart-page/CartPage';
 import ProductDetails from './ProductDetails';
-import store from '../store/index'
 
 class MenuBar extends React.Component {
 	buildMenuItems = () => {
 		const categories = 0;
 	}
 	render() {
-		const currentProd = store.getState().currentProd;
 		return (
 			<div className="MenuBar">
 				<Router>
