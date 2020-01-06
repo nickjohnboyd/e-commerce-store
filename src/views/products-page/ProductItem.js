@@ -12,12 +12,23 @@ class ProductItem extends React.Component {
 					<div className="product-img-cont">
 						<img className="product-img" src={this.props.img} alt="product"></img>
 					</div>
-					<h4 className="product-title">{this.props.title}</h4>
-					<div className="product-price">${this.props.price}</div>
+					<div className="product-info">
+						<div className="product-title">{this.props.title}</div>
+						<div className="p-info-bottom">
+							<div className="product-category">Appliance</div>
+							<div className="product-price">${this.props.price}</div>
+						</div>
+					</div>
+					<div className="product-options">
+						<button className="ui button add-cart-btn">Add to cart</button>
+						<button className="ui button details-btn">Details</button>
+					</div>
 				</div>
 			</Link>
+			
 		);
 	}
 };
 
 export default ProductItem;
+
