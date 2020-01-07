@@ -15,10 +15,19 @@ class ProductDetails extends React.Component {
 		console.log(currentProduct);
 		return (
 			<div className="ProductDetails">
-				<div className="p-img-cont">
-					<img className="p-img" src={currentProduct.img}></img>
+				<div className="prod-top">
+					<div className="prod-info">
+						<div className="prod-title">{currentProduct.title}</div>
+						<div className="prod-price">${currentProduct.price}</div>
+						<button className="ui button add-to-cart">Add to cart</button>
+						<div className="prod-descrip">{currentProduct.description}</div>
+					</div>
+					<div className="prod-img-cont">
+						<img className="prod-img" src={currentProduct.img}></img>
+					</div>
 				</div>
-				<button className="ui button add-to-cart">Add to cart</button>
+				<div className="prod-bottom">
+				</div>
 			</div>
 		);
 	}
