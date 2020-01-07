@@ -18,6 +18,7 @@ class ProductDetails extends React.Component {
 				<div className="p-img-cont">
 					<img className="p-img" src={currentProduct.img}></img>
 				</div>
+				<button className="ui button add-to-cart">Add to cart</button>
 			</div>
 		);
 	}

@@ -39,6 +39,12 @@
     color: #000000;
     margin: 10px; }
 
+.message-bar {
+  background-color: #bdbcbc;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 10px 0; }
+
 .Footer {
   display: flex;
   align-items: center;
@@ -54,11 +60,20 @@
   flex-wrap: wrap;
   justify-content: center; }
 
+.ProductItem:hover {
+  box-shadow: 0 0 11px rgba(33, 33, 33, 0.2); }
+
 .ProductItem:hover .product-options {
   display: flex; }
 
 .ProductItem:hover .product-info {
   display: none; }
+
+.ProductItem .product-options {
+  transition: display 2s; }
+
+.ProductItem .product-info {
+  transition: display 2s; }
 
 .ProductItem {
   display: flex;
@@ -70,7 +85,8 @@
   background-color: #ffffff;
   margin: 15px;
   border-radius: 5px;
-  padding: 15px; }
+  padding: 15px;
+  transition: box-shadow 0.5s; }
   .ProductItem .product-img-cont {
     display: flex;
     flex-direction: column;
@@ -88,25 +104,38 @@
     width: 100%;
     height: 130px;
     padding: 25px 0px;
-    border-top: 1px solid #dedede; }
+    border-top: 1px solid #dedede;
+    transition: display 2s; }
   .ProductItem .product-options {
     display: none;
     justify-content: center;
     width: 100%;
     height: 130px;
     padding: 25px 0px;
-    background-color: #ffffff; }
+    background-color: #ffffff;
+    transition: display 2s; }
     .ProductItem .product-options .add-cart-btn {
       width: 60%;
       background-color: #2d89fa;
-      color: #ffffff; }
+      color: #ffffff;
+      transition: background-color 0.3s; }
+      .ProductItem .product-options .add-cart-btn .fa-shopping-cart {
+        margin-right: 7px; }
     .ProductItem .product-options .add-cart-btn:hover {
-      background-color: #a3a3a3; }
+      background-color: #fcba03; }
     .ProductItem .product-options .details-btn {
-      width: 40%; }
+      height: 80px;
+      width: 100%;
+      background-color: #ffffff;
+      border: 2px solid rgba(222, 222, 222, 0.5);
+      transition: all 0.3s; }
+      .ProductItem .product-options .details-btn .details-title {
+        margin-left: 7px; }
     .ProductItem .product-options .details-btn:hover {
       background-color: #2d89fa;
       color: #ffffff; }
+    .ProductItem .product-options .details-link {
+      width: 40%; }
   .ProductItem .p-info-bottom {
     display: flex;
     justify-content: space-between; }
@@ -119,3 +148,13 @@
     margin-bottom: 5px;
     text-transform: uppercase;
     width: 80%; }
+
+.ProductDetails {
+  margin: 0;
+  padding: 0;
+  display: flex; }
+  .ProductDetails .p-img-cont {
+    height: 300px;
+    width: 300px; }
+    .ProductDetails .p-img-cont .p-img {
+      height: 150px; }

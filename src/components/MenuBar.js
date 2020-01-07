@@ -38,6 +38,7 @@ class MenuBar extends React.Component {
 							</Link>
 						</div>
 					</div>
+					<div className="message-bar">Free standard shipping over $200</div>
 					<Switch>
 						<Route exact path="/" component={HomePage} />
 						<Route exact path="/products" component={ProductsPage} />

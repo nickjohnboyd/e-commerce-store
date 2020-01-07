@@ -7,7 +7,6 @@ class ProductItem extends React.Component {
 	}
 	render() {
 		return (
-			<Link to={`/products/${this.props.id}`}>
 				<div className="ProductItem">
 					<div className="product-img-cont">
 						<img className="product-img" src={this.props.img} alt="product"></img>
@@ -20,12 +19,19 @@ class ProductItem extends React.Component {
 						</div>
 					</div>
 					<div className="product-options">
-						<button className="ui button add-cart-btn">Add to cart</button>
-						<button className="ui button details-btn">Details</button>
+						<button className="ui button add-cart-btn">
+							<i class="fas fa-shopping-cart"></i>
+							<span>Add to cart</span>
+						</button>
+						<Link to={`/products/${this.props.id}`} className="details-link">
+							<button className="ui button details-btn">
+								<i class="fas fa-angle-right"></i>
+								<span className="details-title">Details</span>
+							</button>
+						</Link>
+
 					</div>
-				</div>
-			</Link>
-			
+				</div>	
 		);
 	}
 };
