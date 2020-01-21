@@ -10,6 +10,7 @@ import HomePage from '../views/home-page/HomePage';
 import ProductsPage from '../views/products-page/ProductsPage';
 import CartPage from '../views/cart-page/CartPage';
 import ProductDetails from './ProductDetails';
+import LoginPage from '../views/login-page/LoginPage';
 
 class MenuBar extends React.Component {
 	buildMenuItems = () => {
@@ -42,6 +43,7 @@ class MenuBar extends React.Component {
 					<Switch>
 						<Route exact path="/" component={HomePage} />
 						<Route exact path="/products" component={ProductsPage} />
+						<Route path="/login" component={LoginPage} />
 						<Route path="/cart" component={CartPage} />
 						<Route path="/products/:productId" component={ProductDetails} />
 					</Switch>

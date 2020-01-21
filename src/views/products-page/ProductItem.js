@@ -19,13 +19,13 @@ class ProductItem extends React.Component {
 						</div>
 					</div>
 					<div className="product-options">
-						<button className="ui button add-cart-btn">
-							<i class="fas fa-shopping-cart"></i>
+						<button className="ui button add-cart-btn" onClick={this.addToCart}>
+							<i className="fas fa-shopping-cart"></i>
 							<span>Add to cart</span>
 						</button>
 						<Link to={`/products/${this.props.id}`} className="details-link">
 							<button className="ui button details-btn">
-								<i class="fas fa-angle-right"></i>
+								<i className="fas fa-angle-right"></i>
 								<span className="details-title">Details</span>
 							</button>
 						</Link>

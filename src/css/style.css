@@ -1,5 +1,5 @@
 .main {
-  height: 800px; }
+  height: 700px; }
 
 .home-page {
   display: flex;
@@ -197,3 +197,39 @@
       width: 50%; }
       .ProductDetails .prod-top .prod-img-cont .prod-img {
         height: 400px; }
+
+.LoginPage {
+  display: flex;
+  justify-content: center;
+  height: 700px; }
+  .LoginPage .login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 90px; }
+    .LoginPage .login .login-title {
+      font-size: 23px;
+      text-transform: uppercase;
+      margin-bottom: 30px; }
+    .LoginPage .login .email {
+      margin-bottom: 25px; }
+      .LoginPage .login .email .email-title {
+        text-transform: uppercase;
+        margin-bottom: 10px; }
+      .LoginPage .login .email .email-input {
+        width: 450px; }
+    .LoginPage .login .password {
+      display: flex;
+      flex-direction: column; }
+      .LoginPage .login .password .pass-bar {
+        display: flex;
+        justify-content: space-between; }
+        .LoginPage .login .password .pass-bar .pass-title {
+          text-transform: uppercase;
+          margin-bottom: 10px; }
+      .LoginPage .login .password .pass-input {
+        width: 450px; }
+    .LoginPage .login .sign-in-btn {
+      margin-top: 40px;
+      width: 400px;
+      text-transform: uppercase; }

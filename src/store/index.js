@@ -3,7 +3,8 @@ import { combineReducers, createStore } from 'redux';
 const reducer = combineReducers({
   products: productsReducer,
 	categories: categoriesReducer,
-	currentProd: currentProductReducer
+	currentProd: currentProductReducer,
+	cart: cartReducer
 });
 
 function productsReducer(state = [], action) {
@@ -17,6 +18,14 @@ function productsReducer(state = [], action) {
 function categoriesReducer(state = [], action) {
 	if(action.type === "CREATE_CATEGORIES") {
 		return state.concat(action.categories);
+	} else {
+		return state;
+	}
+}
+
+function cartReducer(state = [], action) {
+	if(action.type === "ADD_TO_CART") {
+		return state.concat(action.cart);
 	} else {
 		return state;
 	}
