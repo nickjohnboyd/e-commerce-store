@@ -2,12 +2,6 @@ import React from 'react';
 import store from '../store';
 
 class ProductDetails extends React.Component {
-	constructor(props) {
-		super(props)
-		this.state = {
-			cart: []
-		}
-	}
 	getCurrentProduct = () => {
 		const products = store.getState().products;
 		const productId = this.props.match.params.productId;
@@ -16,13 +10,10 @@ class ProductDetails extends React.Component {
 		});
 	}
 	addToCart = (currentProd) => {
-		let cart = this.state.cart;
-		cart.push(currentProd);
-		this.setState({cart});
-		console.log(this.state.cart);
+		let cart = [currentProd];
 		store.dispatch({
 			type: "ADD_TO_CART",
-			cart: this.state.cart
+			cart: cart
 		});
 		console.log(store.getState().cart);
 	}
