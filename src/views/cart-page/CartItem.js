@@ -13,7 +13,7 @@ class CartItem extends React.Component {
 					</div>
 					<div className="item-title">{this.props.title}</div>
 				</div>
-				<div className="item-price">{this.props.price}</div>
+				<div className="item-price">${this.props.price}</div>
 			</div>
 		);
 	}
