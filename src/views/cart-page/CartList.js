@@ -3,10 +3,22 @@ import store from '../../store/index';
 import CartItem from './CartItem';
 
 class CartList extends React.Component {
+	constructor(props) {
+		super(props);
+		this.cart = store.getState().cart;
+	}
+	setQuanitity = () => {
+		console.log(this.cart);
+		for(let i = 0; i < this.cart.length - 1; i++) {
+			if(this.cart[i].id === this.cart[i + 1].id) {
+				this.cart[i].quantity++;
+			}
+		}
+	}
 	buildCart = () => {
-		const cart = store.getState().cart;
-		return cart.map((item, idx) => (
-			<CartItem 
+		this.setQuanitity();
+		return this.cart.map((item, idx) => (
+			<CartItem
 				id={item.id}
 				title={item.title}
 				description={item.description}
@@ -15,6 +27,7 @@ class CartList extends React.Component {
 				rating={item.rating}
 				category={item.category}
 				key={idx}
+				quantity={item.quantity}
 			/>
 		));
 	}

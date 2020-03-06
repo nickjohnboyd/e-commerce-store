@@ -7,7 +7,7 @@ import './css/style.css';
 
 class App extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       error: null,
       prodIsLoaded: false,

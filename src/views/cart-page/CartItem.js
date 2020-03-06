@@ -2,7 +2,7 @@ import React from 'react';
 
 class CartItem extends React.Component {
 	constructor(props) {
-		super(props)
+		super(props);
 	}
 	render() {
 		return (
@@ -13,6 +13,7 @@ class CartItem extends React.Component {
 					</div>
 					<div className="item-title">{this.props.title}</div>
 				</div>
+				<div className="item-quantity">{this.props.quantity}</div>
 				<div className="item-price">${this.props.price}</div>
 			</div>
 		);

@@ -24,7 +24,16 @@ function categoriesReducer(state = [], action) {
 }
 
 function cartReducer(state = [], action) {
-	if(action.type === "ADD_TO_CART") {
+	if(action.type === "ADD_TO_CART") {	
+		// for(let i = 0; i < state - 1; i++) {
+		// 	let current = state[i];
+		// 	for(let j = 0; j < state - 1; j++) {
+		// 		if(current.id === state[j].id) {
+		// 			current.quantity++;
+		// 		}
+		// 	}
+		// }
+		
 		return state.concat(action.cart);
 	} else {
 		return state;

@@ -1,9 +1,24 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import store from '../../store';
 
 class ProductItem extends React.Component {
 	constructor(props) {
-		super(props)
+		super(props);
+	}
+	getCurrentProduct = (id) => {
+		const products = store.getState().products;
+		return products.filter(p => {
+			return p.id == id;
+		});
+	}
+	addToCart = (id) => {
+		let cart = this.getCurrentProduct(id)[0];
+		console.log(cart);
+		store.dispatch({
+			type: 'ADD_TO_CART',
+			cart: cart
+		});
 	}
 	render() {
 		return (
@@ -19,7 +34,7 @@ class ProductItem extends React.Component {
 						</div>
 					</div>
 					<div className="product-options">
-						<button className="ui button add-cart-btn" onClick={this.addToCart}>
+						<button className="ui button add-cart-btn" onClick={() => (this.addToCart(this.props.id))}>
 							<i className="fas fa-shopping-cart"></i>
 							<span>Add to cart</span>
 						</button>
@@ -37,4 +52,3 @@ class ProductItem extends React.Component {
 };
 
 export default ProductItem;
-
