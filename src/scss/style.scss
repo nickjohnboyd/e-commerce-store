@@ -385,3 +385,12 @@
 		font-size: 15px;
 	}
 }
+.ProductsFilter {
+	display: flex;
+	justify-content: flex-end;
+
+	.products-filter {
+		margin: 10px 100px 10px 0px;
+		width: 220px;
+	}
+}
