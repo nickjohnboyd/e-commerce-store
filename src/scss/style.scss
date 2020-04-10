@@ -171,6 +171,33 @@
 			width: 40%;
 		}
 	}
+	.item-added-slide-cont {
+		display: none;
+		position: absolute;
+		width: 425px;
+	}
+	.item-added-cont {
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		padding-left: 10px;
+		// transition: opacity 2s ease-in;
+	}
+	.item-added {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 40px;
+		background-color: #28a745;
+		color: #ffffff;
+		border-radius: 5px;
+		transition: all 0.3s;
+		font-weight: bold;
+		padding: 0 20px;
+	}
+	.hidden {
+		display: none;
+	}
 	.p-info-bottom {
 		display: flex;
 		justify-content: space-between;
@@ -388,7 +415,13 @@
 .ProductsFilter {
 	display: flex;
 	justify-content: flex-end;
+	align-items: center;
 
+	.filter-label {
+		vertical-align: middle;
+		margin-right: 10px;
+		font-size: 15px;
+	}
 	.products-filter {
 		margin: 10px 100px 10px 0px;
 		width: 220px;

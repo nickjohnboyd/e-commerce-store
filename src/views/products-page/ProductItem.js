@@ -1,10 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import store from '../../store';
+import $ from 'jquery';
 
 class ProductItem extends React.Component {
 	constructor(props) {
 		super(props);
+		this.state = {
+			itemAdded: false
+		}
 	}
 	getCurrentProduct = (id) => {
 		const products = store.getState().products;
@@ -19,10 +23,38 @@ class ProductItem extends React.Component {
 			type: 'ADD_TO_CART',
 			cart: cart
 		});
+		$(`#slide-${this.props.id}`).slideDown('medium');
+		setTimeout(() => {
+			$(`#slide-${this.props.id}`).slideUp('medium');
+		}, 2000);
+
+		// this.setState(prevState => ({
+		// 	itemAdded: !prevState.itemAdded
+		// }), () => {
+		// 	setTimeout(() => {
+		// 		this.setState(prevState => ({
+		// 			itemAdded: !prevState.itemAdded
+		// 		}))
+		// 	}, 2000);
+		// });
 	}
 	render() {
+		const { itemAdded } = this.state;
+
 		return (
 				<div className="ProductItem">
+					{/* <div className={`item-added-cont ${itemAdded ? "" : " hidden"}`}>
+						<div className="item-added">
+							<div className="added-msg">Item added to cart!</div>
+						</div>
+					</div> */}
+					<div className="item-added-slide-cont" id={`slide-${this.props.id}`}>
+						<div className="item-added-cont">
+							<div className="item-added">
+								<div className="added-msg">Item added to cart!</div>
+							</div>
+						</div>
+					</div>
 					<div className="product-img-cont">
 						<img className="product-img" src={this.props.img} alt="product"></img>
 					</div>
@@ -44,7 +76,6 @@ class ProductItem extends React.Component {
 								<span className="details-title">Details</span>
 							</button>
 						</Link>
-
 					</div>
 				</div>	
 		);

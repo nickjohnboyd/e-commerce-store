@@ -65,6 +65,7 @@ class ProductsList extends React.Component {
 		return (
 			<div className="MyProductsList">
 				<div className="ProductsFilter">
+					<span className="filter-label">Filter By Title: </span>
 					<div className="ui input products-filter">
 						<input type="text" placeholder="Filter..." onKeyUp={this.setFilter}></input>
 					</div>
