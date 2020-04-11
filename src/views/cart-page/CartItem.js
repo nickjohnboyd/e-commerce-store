@@ -14,6 +14,12 @@ class CartItem extends React.Component {
 					<div className="item-title">{this.props.title}</div>
 				</div>
 				<div className="item-quantity">{this.props.quantity}</div>
+				<div className="update-btn-cont">
+					<button className="ui button update-btn">Update</button>
+				</div>
+				<div className="delete-btn-cont">
+					<button className="ui button delete-btn">Delete</button>
+				</div>
 				<div className="item-price">${this.props.price}</div>
 			</div>
 		);

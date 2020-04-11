@@ -4,7 +4,8 @@ const reducer = combineReducers({
   products: productsReducer,
 	categories: categoriesReducer,
 	currentProd: currentProductReducer,
-	cart: cartReducer
+	cart: cartReducer,
+	cartNum: addCartQuantityReducer
 });
 
 function productsReducer(state = [], action) {
@@ -35,6 +36,15 @@ function cartReducer(state = [], action) {
 		// }
 		
 		return state.concat(action.cart);
+	} else {
+		return state;
+	}
+}
+
+function addCartQuantityReducer(state = 0, action) {
+	if(action.type === "ADD_CART_QUANTITY") {
+		// state = 0;
+		return state += action.cartNum;
 	} else {
 		return state;
 	}

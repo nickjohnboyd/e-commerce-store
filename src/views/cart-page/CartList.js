@@ -5,13 +5,16 @@ import CartItem from './CartItem';
 class CartList extends React.Component {
 	constructor(props) {
 		super(props);
-		this.cart = store.getState().cart;
+		this.cart = store.getState().cart; 
 	}
 	setQuanitity = () => {
 		console.log(this.cart);
 		for(let i = 0; i < this.cart.length - 1; i++) {
 			if(this.cart[i].id === this.cart[i + 1].id) {
 				this.cart[i].quantity++;
+				console.log(this.cart[i]);
+				console.log('cart quanitity');
+				console.log(this.cart[i].quantity);
 			}
 		}
 	}

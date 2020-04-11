@@ -6,9 +6,11 @@ import $ from 'jquery';
 class ProductItem extends React.Component {
 	constructor(props) {
 		super(props);
-		this.state = {
-			itemAdded: false
-		}
+		// this.state = {
+		// 	itemAdded: false
+		// }
+		// this.cartNum = store.getState().cartNum;
+		this.cartNum = 0;
 	}
 	getCurrentProduct = (id) => {
 		const products = store.getState().products;
@@ -17,16 +19,28 @@ class ProductItem extends React.Component {
 		});
 	}
 	addToCart = (id) => {
+		this.cartNum++;
 		let cart = this.getCurrentProduct(id)[0];
 		console.log(cart);
 		store.dispatch({
 			type: 'ADD_TO_CART',
 			cart: cart
 		});
+		store.dispatch({
+			type: "ADD_CART_QUANTITY",
+			cartNum: this.cartNum
+		});
+
+		// JQuery slide in/out
 		$(`#slide-${this.props.id}`).slideDown('medium');
 		setTimeout(() => {
 			$(`#slide-${this.props.id}`).slideUp('medium');
 		}, 2000);
+
+		console.log(store.getState().cartNum);
+		console.log('quantity');
+		console.log(this.props.quantity);
+
 
 		// this.setState(prevState => ({
 		// 	itemAdded: !prevState.itemAdded
@@ -39,7 +53,7 @@ class ProductItem extends React.Component {
 		// });
 	}
 	render() {
-		const { itemAdded } = this.state;
+		// const { itemAdded } = this.state;
 
 		return (
 				<div className="ProductItem">
@@ -51,7 +65,7 @@ class ProductItem extends React.Component {
 					<div className="item-added-slide-cont" id={`slide-${this.props.id}`}>
 						<div className="item-added-cont">
 							<div className="item-added">
-								<div className="added-msg">Item added to cart!</div>
+								<div className="added-msg">Added to cart!</div>
 							</div>
 						</div>
 					</div>
