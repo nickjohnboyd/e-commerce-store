@@ -4,64 +4,42 @@ import store from '../../store';
 import $ from 'jquery';
 
 class ProductItem extends React.Component {
-	constructor(props) {
-		super(props);
-		// this.state = {
-		// 	itemAdded: false
-		// }
-		// this.cartNum = store.getState().cartNum;
-		this.cartNum = 0;
-	}
 	getCurrentProduct = (id) => {
 		const products = store.getState().products;
-		return products.filter(p => {
-			return p.id == id;
-		});
+		return products.find(p => p.id === id);
 	}
-	addToCart = (id) => {
-		this.cartNum++;
-		let cart = this.getCurrentProduct(id)[0];
-		console.log(cart);
+	setQuantity = (id) => {
+		const currentProd = this.getCurrentProduct(id);
+		const cart = store.getState().cart;
+		const cartItem = cart.find(item => item.id === currentProd.id);
+		if(cartItem) {
+			const index = cart.indexOf(cartItem);
+			let itemQuantity = cart[index].quantity;
+			itemQuantity++;
+			currentProd.quantity = itemQuantity;
+			cart.splice(index, 1);
+		}
+		console.log(currentProd.quantity);
+		this.addToCart(currentProd);
+	}
+	addToCart = (currentProd) => {
+		const cart = [currentProd];
 		store.dispatch({
 			type: 'ADD_TO_CART',
 			cart: cart
-		});
-		store.dispatch({
-			type: "ADD_CART_QUANTITY",
-			cartNum: this.cartNum
 		});
 
 		// JQuery slide in/out
 		$(`#slide-${this.props.id}`).slideDown('medium');
 		setTimeout(() => {
 			$(`#slide-${this.props.id}`).slideUp('medium');
-		}, 2000);
+		}, 1500);
 
-		console.log(store.getState().cartNum);
-		console.log('quantity');
-		console.log(this.props.quantity);
-
-
-		// this.setState(prevState => ({
-		// 	itemAdded: !prevState.itemAdded
-		// }), () => {
-		// 	setTimeout(() => {
-		// 		this.setState(prevState => ({
-		// 			itemAdded: !prevState.itemAdded
-		// 		}))
-		// 	}, 2000);
-		// });
+		console.log(store.getState().cart);
 	}
 	render() {
-		// const { itemAdded } = this.state;
-
 		return (
 				<div className="ProductItem">
-					{/* <div className={`item-added-cont ${itemAdded ? "" : " hidden"}`}>
-						<div className="item-added">
-							<div className="added-msg">Item added to cart!</div>
-						</div>
-					</div> */}
 					<div className="item-added-slide-cont" id={`slide-${this.props.id}`}>
 						<div className="item-added-cont">
 							<div className="item-added">
@@ -80,7 +58,7 @@ class ProductItem extends React.Component {
 						</div>
 					</div>
 					<div className="product-options">
-						<button className="ui button add-cart-btn" onClick={() => (this.addToCart(this.props.id))}>
+						<button className="ui button add-cart-btn" onClick={() => (this.setQuantity(this.props.id))}>
 							<i className="fas fa-shopping-cart"></i>
 							<span>Add to cart</span>
 						</button>

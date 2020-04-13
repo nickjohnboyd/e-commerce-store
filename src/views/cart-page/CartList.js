@@ -5,22 +5,19 @@ import CartItem from './CartItem';
 class CartList extends React.Component {
 	constructor(props) {
 		super(props);
-		this.cart = store.getState().cart; 
-	}
-	setQuanitity = () => {
-		console.log(this.cart);
-		for(let i = 0; i < this.cart.length - 1; i++) {
-			if(this.cart[i].id === this.cart[i + 1].id) {
-				this.cart[i].quantity++;
-				console.log(this.cart[i]);
-				console.log('cart quanitity');
-				console.log(this.cart[i].quantity);
-			}
+		this.state = {
+			cart: store.getState().cart,
+			cartItems: []
 		}
 	}
 	buildCart = () => {
-		this.setQuanitity();
-		return this.cart.map((item, idx) => (
+		this.setState({
+			cart: store.getState().cart
+		}, this.buildCartItems);
+	}
+	buildCartItems = () => {
+		console.log('new cart items');
+		const cartItems = this.state.cart.map((item, idx) => (
 			<CartItem
 				id={item.id}
 				title={item.title}
@@ -31,15 +28,22 @@ class CartList extends React.Component {
 				category={item.category}
 				key={idx}
 				quantity={item.quantity}
+				onDeleteItem={this.buildCart}
 			/>
 		));
+		let newState = this.state;
+		newState.cartItems = cartItems;
+		this.setState(newState);
+	}
+	componentDidMount() {
+		this.buildCart();
 	}
 	render() {
 		return (
 			<div className="CartList">
 				<div className="cart-title">Cart</div>
 				<div className="cart">
-					{this.buildCart()}
+					{this.state.cartItems}
 				</div>
 			</div>
 		);

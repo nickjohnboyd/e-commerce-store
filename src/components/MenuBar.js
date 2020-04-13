@@ -25,7 +25,7 @@ class MenuBar extends React.Component {
 							<div className="nav-item nav-title">WorkTech</div>
 						</Link>
 						<Link to="/products">
-							<div className="nav-item">SHOP</div>
+							<div className="shop-btn nav-item">SHOP</div>
 						</Link>
 						<div className="right-nav nav-item">
 							<Link to="/search">

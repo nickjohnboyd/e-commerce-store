@@ -1,8 +1,21 @@
 import React from 'react';
+import store from '../../store';
 
 class CartItem extends React.Component {
 	constructor(props) {
 		super(props);
+	}
+	deleteItem = () => {
+		store.dispatch({
+			type: "DELETE_ITEM",
+			itemId: this.props.id
+		});
+
+		this.props.onDeleteItem();
+
+		console.log('deleted');
+		console.log(this.props.id);
+		console.log(store.getState().cart);
 	}
 	render() {
 		return (
@@ -18,7 +31,7 @@ class CartItem extends React.Component {
 					<button className="ui button update-btn">Update</button>
 				</div>
 				<div className="delete-btn-cont">
-					<button className="ui button delete-btn">Delete</button>
+					<button className="ui button delete-btn" onClick={() => {this.deleteItem()}}>Delete</button>
 				</div>
 				<div className="item-price">${this.props.price}</div>
 			</div>

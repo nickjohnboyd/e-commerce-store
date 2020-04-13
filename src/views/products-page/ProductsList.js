@@ -42,7 +42,6 @@ class ProductsList extends React.Component {
 		const productItems = this.state.products.map((product, idx) => (
 			<ProductItem
 				id={product.id}
-				quantity={0}
 				title={product.title}
 				description={product.description}
 				img={product.img}
