@@ -9,12 +9,12 @@ import {
 import HomePage from '../views/home-page/HomePage';
 import ProductsPage from '../views/products-page/ProductsPage';
 import CartPage from '../views/cart-page/CartPage';
-import ProductDetails from './ProductDetails';
+import ProductDetails from '../views/products-page/ProductDetails';
 import LoginPage from '../views/login-page/LoginPage';
 
 class MenuBar extends React.Component {
 	buildMenuItems = () => {
-		const categories = 0;
+		// const categories = 0;
 	}
 	render() {
 		return (

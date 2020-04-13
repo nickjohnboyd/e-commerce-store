@@ -15,7 +15,7 @@ class LoginPage extends React.Component {
 					<div className="password">
 						<div className="pass-bar">
 							<div className="pass-title">Password</div>
-							<a className="forgot-pass">Forgot password?</a>
+							{/* <a className="forgot-pass" href="">Forgot password?</a> */}
 						</div>
 						<div className="ui input">
 							<input type="text" className="pass-input"></input>

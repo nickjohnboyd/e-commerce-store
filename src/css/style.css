@@ -1,22 +1,3 @@
-.main {
-  height: 700px; }
-
-.home-page {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-  background-image: url(.././images/macbook-pro-table.jpeg);
-  background-size: cover; }
-  .home-page .h-info {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    background-color: #ffffff;
-    padding: 25px 40px;
-    border-radius: 8px; }
-
 .navbar {
   display: flex;
   align-items: center;
@@ -61,14 +42,160 @@
   justify-content: center;
   height: 50px; }
 
-.ProductsPage {
-  padding: 10px;
-  background-color: #f2f3f5; }
+.main {
+  height: 700px; }
+
+.home-page {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  background-image: url(.././images/macbook-pro-table.jpeg);
+  background-size: cover; }
+  .home-page .h-info {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #ffffff;
+    padding: 25px 40px;
+    border-radius: 8px; }
+
+.LoginPage {
+  display: flex;
+  justify-content: center;
+  height: 700px; }
+  .LoginPage .login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 90px; }
+    .LoginPage .login .login-title {
+      font-size: 23px;
+      text-transform: uppercase;
+      margin-bottom: 30px; }
+    .LoginPage .login .email {
+      margin-bottom: 25px; }
+      .LoginPage .login .email .email-title {
+        text-transform: uppercase;
+        margin-bottom: 10px; }
+      .LoginPage .login .email .email-input {
+        width: 450px; }
+    .LoginPage .login .password {
+      display: flex;
+      flex-direction: column; }
+      .LoginPage .login .password .pass-bar {
+        display: flex;
+        justify-content: space-between; }
+        .LoginPage .login .password .pass-bar .pass-title {
+          text-transform: uppercase;
+          margin-bottom: 10px; }
+      .LoginPage .login .password .pass-input {
+        width: 450px; }
+    .LoginPage .login .sign-in-btn {
+      margin-top: 40px;
+      width: 400px;
+      text-transform: uppercase; }
+
+.ProductDetails {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 700px; }
+  .ProductDetails .prod-top {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 65px;
+    width: 100%; }
+    .ProductDetails .prod-top .item-added-slide-cont {
+      display: none;
+      position: absolute;
+      width: 100%;
+      margin-bottom: 50px; }
+    .ProductDetails .prod-top .item-added-cont {
+      display: flex;
+      align-items: center;
+      padding-left: 10px; }
+    .ProductDetails .prod-top .item-added {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 45px;
+      width: 250px;
+      background-color: #28a745;
+      color: #ffffff;
+      border-radius: 5px;
+      transition: all 0.3s;
+      font-weight: bold;
+      padding: 0 30px; }
+  .ProductDetails .prod-middle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 60px 0; }
+    .ProductDetails .prod-middle .prod-info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 400px;
+      padding: 0 30px;
+      width: 50%; }
+      .ProductDetails .prod-middle .prod-info .prod-title {
+        font-weight: bold;
+        font-size: 25px;
+        margin-bottom: 25px;
+        text-transform: uppercase;
+        line-height: 30px;
+        text-align: center; }
+      .ProductDetails .prod-middle .prod-info .prod-price {
+        color: #2d89fa;
+        font-weight: bold;
+        font-size: 17px; }
+      .ProductDetails .prod-middle .prod-info .add-to-cart {
+        margin-top: 35px;
+        width: 250px;
+        height: 45px;
+        background-color: #2d89fa;
+        color: #ffffff; }
+      .ProductDetails .prod-middle .prod-info .prod-descrip {
+        width: 85%;
+        margin-top: 40px;
+        font-style: italic;
+        font-size: 17px;
+        line-height: 30px; }
+    .ProductDetails .prod-middle .prod-img-cont {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50%; }
+      .ProductDetails .prod-middle .prod-img-cont .prod-img {
+        height: 400px; }
 
 .ProductsList {
   display: flex;
   flex-wrap: wrap;
   justify-content: center; }
+
+.ProductsFilter {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center; }
+  .ProductsFilter .filter-label {
+    vertical-align: middle;
+    margin-right: 10px;
+    font-size: 15px; }
+  .ProductsFilter .products-filter {
+    margin: 10px 100px 10px 0px;
+    width: 220px; }
+
+.ProductsPage {
+  padding: 10px;
+  background-color: #f2f3f5; }
 
 .ProductItem:hover {
   box-shadow: 0 0 11px rgba(33, 33, 33, 0.2); }
@@ -179,139 +306,22 @@
     text-transform: uppercase;
     width: 80%; }
 
-.ProductDetails {
-  margin: 0;
-  padding: 0;
+.CartEmpty {
+  height: 400px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  height: 700px; }
-  .ProductDetails .prod-top {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 0 65px;
-    width: 100%; }
-    .ProductDetails .prod-top .item-added-slide-cont {
-      display: none;
-      position: absolute;
-      width: 100%;
-      margin-bottom: 50px; }
-    .ProductDetails .prod-top .item-added-cont {
-      display: flex;
-      align-items: center;
-      padding-left: 10px; }
-    .ProductDetails .prod-top .item-added {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 45px;
-      width: 250px;
-      background-color: #28a745;
-      color: #ffffff;
-      border-radius: 5px;
-      transition: all 0.3s;
-      font-weight: bold;
-      padding: 0 30px; }
-  .ProductDetails .prod-middle {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    margin: 60px 0; }
-    .ProductDetails .prod-middle .prod-info {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      height: 400px;
-      padding: 0 30px;
-      width: 50%; }
-      .ProductDetails .prod-middle .prod-info .prod-title {
-        font-weight: bold;
-        font-size: 25px;
-        margin-bottom: 25px;
-        text-transform: uppercase;
-        line-height: 30px;
-        text-align: center; }
-      .ProductDetails .prod-middle .prod-info .prod-price {
-        color: #2d89fa;
-        font-weight: bold;
-        font-size: 17px; }
-      .ProductDetails .prod-middle .prod-info .add-to-cart {
-        margin-top: 35px;
-        width: 250px;
-        height: 45px;
-        background-color: #2d89fa;
-        color: #ffffff; }
-      .ProductDetails .prod-middle .prod-info .prod-descrip {
-        width: 85%;
-        margin-top: 40px;
-        font-style: italic;
-        font-size: 17px;
-        line-height: 30px; }
-    .ProductDetails .prod-middle .prod-img-cont {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 50%; }
-      .ProductDetails .prod-middle .prod-img-cont .prod-img {
-        height: 400px; }
-
-.LoginPage {
-  display: flex;
-  justify-content: center;
-  height: 700px; }
-  .LoginPage .login {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 90px; }
-    .LoginPage .login .login-title {
-      font-size: 23px;
-      text-transform: uppercase;
-      margin-bottom: 30px; }
-    .LoginPage .login .email {
-      margin-bottom: 25px; }
-      .LoginPage .login .email .email-title {
-        text-transform: uppercase;
-        margin-bottom: 10px; }
-      .LoginPage .login .email .email-input {
-        width: 450px; }
-    .LoginPage .login .password {
-      display: flex;
-      flex-direction: column; }
-      .LoginPage .login .password .pass-bar {
-        display: flex;
-        justify-content: space-between; }
-        .LoginPage .login .password .pass-bar .pass-title {
-          text-transform: uppercase;
-          margin-bottom: 10px; }
-      .LoginPage .login .password .pass-input {
-        width: 450px; }
-    .LoginPage .login .sign-in-btn {
-      margin-top: 40px;
-      width: 400px;
-      text-transform: uppercase; }
-
-.CartPage {
-  margin: 0;
-  padding: 0;
-  min-height: 700px; }
-
-.CartList {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 0 40px 40px 40px; }
-  .CartList .cart-title {
-    font-size: 25px;
-    line-height: 175px;
-    text-transform: uppercase; }
-  .CartList .cart {
-    width: 100%;
-    border-top: 1px solid black; }
+  align-items: center; }
+  .CartEmpty .cart-title {
+    font-size: 23px;
+    text-transform: uppercase;
+    margin-bottom: 10px; }
+  .CartEmpty .empty-msg {
+    margin-bottom: 15px;
+    font-size: 15px; }
+  .CartEmpty .continue-shopping {
+    font-size: 15px; }
 
 .CartItem {
   display: flex;
@@ -342,32 +352,41 @@
   .CartItem .item-price {
     font-size: 15px;
     font-weight: bold; }
+  .CartItem .item-quantity {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #E0E1E2;
+    border-radius: 5px; }
+    .CartItem .item-quantity .subtract, .CartItem .item-quantity .add {
+      margin: 0;
+      padding: 0;
+      height: 30px;
+      width: 30px;
+      background-color: #ffffff; }
+    .CartItem .item-quantity .quantity-input {
+      margin: 0 4px;
+      height: 30px;
+      width: 70px;
+      text-align: center; }
+      .CartItem .item-quantity .quantity-input .q-input {
+        text-align: center; }
 
-.CartEmpty {
-  height: 400px;
-  width: 100%;
+.CartList {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center; }
-  .CartEmpty .cart-title {
-    font-size: 23px;
-    text-transform: uppercase;
-    margin-bottom: 10px; }
-  .CartEmpty .empty-msg {
-    margin-bottom: 15px;
-    font-size: 15px; }
-  .CartEmpty .continue-shopping {
-    font-size: 15px; }
+  align-items: center;
+  padding: 0 40px 40px 40px; }
+  .CartList .cart-title {
+    font-size: 25px;
+    line-height: 175px;
+    text-transform: uppercase; }
+  .CartList .cart {
+    width: 100%;
+    border-top: 1px solid black; }
 
-.ProductsFilter {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center; }
-  .ProductsFilter .filter-label {
-    vertical-align: middle;
-    margin-right: 10px;
-    font-size: 15px; }
-  .ProductsFilter .products-filter {
-    margin: 10px 100px 10px 0px;
-    width: 220px; }
+.CartPage {
+  margin: 0;
+  padding: 0;
+  min-height: 700px; }
