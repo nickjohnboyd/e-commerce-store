@@ -55,6 +55,9 @@ function cartReducer(state = [
 		console.log(action.itemId);
 		state.splice(state.indexOf(state.find(item => action.itemId === item.id)), 1);
 		return state;
+	} 
+	else if(action.type === "REPLACE_CART") {
+		return state = action.cart;
 	} else {
 		return state;
 	}

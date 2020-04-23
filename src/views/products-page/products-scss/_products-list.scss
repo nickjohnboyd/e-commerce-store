@@ -1,0 +1,20 @@
+.ProductsList {
+  display: flex;
+  flex-wrap: wrap;
+	justify-content: center;
+}
+.ProductsFilter {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+
+	.filter-label {
+		vertical-align: middle;
+		margin-right: 10px;
+		font-size: 15px;
+	}
+	.products-filter {
+		margin: 10px 100px 10px 0px;
+		width: 220px;
+	}
+}

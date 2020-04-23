@@ -1,0 +1,52 @@
+.LoginPage {
+	display: flex;
+	justify-content: center;
+	height: 700px;
+
+	.login {
+		display: flex;
+		flex-direction: column;
+		// justify-content: center;
+		align-items: center;
+		margin-top: 90px;
+
+		.login-title {
+			font-size: 23px;
+			text-transform: uppercase;
+			margin-bottom: 30px;
+		}
+		.email {
+			margin-bottom: 25px;
+
+			.email-title {
+				text-transform: uppercase;
+				margin-bottom: 10px;
+			}
+			.email-input {
+				width: 450px;
+			}
+		}
+		.password {
+			display: flex;
+			flex-direction: column;
+
+			.pass-bar {
+				display: flex;
+				justify-content: space-between;
+
+				.pass-title {
+					text-transform: uppercase;
+					margin-bottom: 10px;
+				}
+			}
+			.pass-input {
+				width: 450px;
+			}
+		}
+		.sign-in-btn {
+			margin-top: 40px;
+			width: 400px;
+			text-transform: uppercase;
+		}
+	}
+}

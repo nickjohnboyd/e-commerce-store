@@ -28,7 +28,7 @@ class CartList extends React.Component {
 				category={item.category}
 				key={idx}
 				quantity={item.quantity}
-				onDeleteItem={this.buildCart}
+				onUpdateCart={this.buildCart}
 			/>
 		));
 		let newState = this.state;

@@ -1,0 +1,26 @@
+.main {
+  height: calc(100vh - 90px);
+}
+.home-page {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  background-image: url(.././images/macbook-pro-table.jpeg);
+	background-size: cover;
+	
+	.h-info {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		justify-content: center;
+		background-color: #ffffff;
+		padding: 25px 40px;
+		border-radius: 8px;
+		height: 190px;
+
+		.h-header {
+			margin-bottom: 40px;
+		}
+	}
+}

@@ -1,0 +1,21 @@
+.CartEmpty {
+	height: 400px;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	.cart-title {
+		font-size: 23px;
+		text-transform: uppercase;
+		margin-bottom: 10px;
+	}
+	.empty-msg {
+		margin-bottom: 15px;
+		font-size: 15px;
+	}
+	.continue-shopping {
+		font-size: 15px;
+	}
+}

@@ -43,7 +43,7 @@
   height: 50px; }
 
 .main {
-  height: 700px; }
+  height: calc(100vh - 90px); }
 
 .home-page {
   display: flex;
@@ -59,7 +59,10 @@
     justify-content: center;
     background-color: #ffffff;
     padding: 25px 40px;
-    border-radius: 8px; }
+    border-radius: 8px;
+    height: 190px; }
+    .home-page .h-info .h-header {
+      margin-bottom: 40px; }
 
 .LoginPage {
   display: flex;
@@ -338,20 +341,17 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      width: 100%;
+      width: 350px;
       height: 200px;
       background-color: #ffffff; }
       .CartItem .item-left .item-img-cont .item-img {
         height: 150px; }
     .CartItem .item-left .item-title {
-      font-size: 15px;
+      font-size: 17px;
       font-weight: bold;
       width: 300px;
       margin-left: 8px;
       text-transform: uppercase; }
-  .CartItem .item-price {
-    font-size: 15px;
-    font-weight: bold; }
   .CartItem .item-quantity {
     display: flex;
     justify-content: center;
@@ -371,6 +371,13 @@
       text-align: center; }
       .CartItem .item-quantity .quantity-input .q-input {
         text-align: center; }
+  .CartItem .item-price {
+    font-size: 22px;
+    font-weight: bold; }
+  .CartItem .delete-btn {
+    color: #4283C4;
+    cursor: pointer;
+    margin-top: 5px; }
 
 .CartList {
   display: flex;
