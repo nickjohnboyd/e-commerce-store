@@ -1,6 +1,7 @@
 import React from 'react';
 import store from '../../store/index';
 import CartItem from './CartItem';
+import OrderPlaced from './OrderPlaced';
 
 class CartList extends React.Component {
 	constructor(props) {
@@ -11,6 +12,7 @@ class CartList extends React.Component {
 			totalPrice: 0
 		}
 		this.total = 0;
+		this.orderPlaced = false;
 	}
 	buildCart = () => {
 		this.setState({
@@ -18,21 +20,27 @@ class CartList extends React.Component {
 		}, this.buildCartItems);
 	}
 	buildCartItems = () => {
-		console.log('new cart items');
-		const cartItems = this.state.cart.map((item, idx) => (
-			<CartItem
-				id={item.id}
-				title={item.title}
-				description={item.description}
-				img={item.img}
-				price={item.price}
-				rating={item.rating}
-				category={item.category}
-				key={idx}
-				quantity={item.quantity}
-				onUpdateCart={this.buildCart}
-			/>
-		));
+		let cartItems = [];
+		if(this.orderPlaced) {
+			cartItems.push(<OrderPlaced key="0" />);
+		} else {
+			console.log('new cart items');
+			cartItems = this.state.cart.map((item, idx) => (
+				<CartItem
+					id={item.id}
+					title={item.title}
+					description={item.description}
+					img={item.img}
+					price={item.price}
+					rating={item.rating}
+					category={item.category}
+					key={idx}
+					quantity={item.quantity}
+					onUpdateCart={this.buildCart}
+				/>
+			));
+		}
+
 		let newState = this.state;
 		newState.cartItems = cartItems;
 		this.setState(newState, this.setTotal);
@@ -55,6 +63,7 @@ class CartList extends React.Component {
 			cart: []
 		});
 		this.buildCart();
+		this.orderPlaced = true;
 	}
 	componentDidMount() {
 		this.buildCart();
