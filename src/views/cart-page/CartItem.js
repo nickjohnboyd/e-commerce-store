@@ -20,7 +20,7 @@ class CartItem extends React.Component {
 		let cartItem = cart.find(item => item.id === this.props.id);
 		switch(condition) {
 			case 'subtract':
-				if(cartItem.quantity <= 0) break;
+				if(cartItem.quantity <= 1) break;
 				cartItem.quantity--;
 				break;
 			case 'add':
@@ -31,12 +31,6 @@ class CartItem extends React.Component {
 				cartItem.quantity = Number(condition.target.value);
 				break;
 		}
-		// if(cartItem.quantity === 0) {
-		// 	store.dispatch({
-		// 		type: "DELETE_ITEM",
-		// 		itemId: this.props.id
-		// 	});
-		// }
 		cart.splice(cart.indexOf(cartItem), 1, cartItem);
 		store.dispatch({
 			type: "REPLACE_CART",

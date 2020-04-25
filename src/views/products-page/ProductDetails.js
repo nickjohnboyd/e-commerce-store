@@ -15,7 +15,7 @@ class ProductDetails extends React.Component {
 			let itemQuantity = cartItem.quantity;
 			itemQuantity++;
 			currentProd.quantity = itemQuantity;
-			// cart.splice(cart.indexOf(cartItem), 1);
+			cart.splice(cart.indexOf(cartItem), 1);
 		}
 		console.log(currentProd.quantity);
 		this.addToCart(currentProd);

@@ -18,7 +18,7 @@ class LoginPage extends React.Component {
 							{/* <a className="forgot-pass" href="">Forgot password?</a> */}
 						</div>
 						<div className="ui input">
-							<input type="text" className="pass-input"></input>
+							<input type="password" className="pass-input"></input>
 						</div>
 					</div>
 					<button className="ui button sign-in-btn">Sign in</button>

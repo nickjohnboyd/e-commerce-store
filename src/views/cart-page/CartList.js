@@ -7,8 +7,10 @@ class CartList extends React.Component {
 		super(props);
 		this.state = {
 			cart: store.getState().cart,
-			cartItems: []
+			cartItems: [],
+			totalPrice: 0
 		}
+		this.total = 0;
 	}
 	buildCart = () => {
 		this.setState({
@@ -33,7 +35,26 @@ class CartList extends React.Component {
 		));
 		let newState = this.state;
 		newState.cartItems = cartItems;
+		this.setState(newState, this.setTotal);
+	}
+	setTotal = () => {
+		this.total = 0;
+		this.state.cart.map(item => {
+			let itemPrice = item.quantity * item.price;
+			this.total += itemPrice;
+		});
+		let newState = this.state;
+		newState.totalPrice = this.total;
 		this.setState(newState);
+		console.log(newState.totalPrice);
+	}
+	placeOrder = () => {
+		console.log('order placed');
+		store.dispatch({
+			type: "REPLACE_CART",
+			cart: []
+		});
+		this.buildCart();
 	}
 	componentDidMount() {
 		this.buildCart();
@@ -44,6 +65,13 @@ class CartList extends React.Component {
 				<div className="cart-title">Cart</div>
 				<div className="cart">
 					{this.state.cartItems}
+				</div>
+				<div className="total">
+					<div className="subtotal">
+						<div className="subtotal-title">Subtotal:</div>
+						<div className="subtotal-price">${this.state.totalPrice}</div>
+					</div>
+					<button className="ui button order-btn" onClick={this.placeOrder}>Place Order</button>
 				</div>
 			</div>
 		);

@@ -28,9 +28,6 @@ class MenuBar extends React.Component {
 							<div className="shop-btn nav-item">SHOP</div>
 						</Link>
 						<div className="right-nav nav-item">
-							<Link to="/search">
-								<div className="nav-icon"><i className="fas fa-search"></i></div>
-							</Link>
 							<Link to="/login">
 								<div className="nav-icon"><i className="fas fa-user-alt"></i></div>
 							</Link>
