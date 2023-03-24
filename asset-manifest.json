@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/e-commerce-store/static/css/main.1b7dd74e.chunk.css",
+    "main.js": "/e-commerce-store/static/js/main.e7cf3f6b.chunk.js",
+    "main.js.map": "/e-commerce-store/static/js/main.e7cf3f6b.chunk.js.map",
+    "runtime-main.js": "/e-commerce-store/static/js/runtime-main.2783665b.js",
+    "runtime-main.js.map": "/e-commerce-store/static/js/runtime-main.2783665b.js.map",
+    "static/js/2.b506a541.chunk.js": "/e-commerce-store/static/js/2.b506a541.chunk.js",
+    "static/js/2.b506a541.chunk.js.map": "/e-commerce-store/static/js/2.b506a541.chunk.js.map",
+    "index.html": "/e-commerce-store/index.html",
+    "precache-manifest.6c5dddc0c56f4f2df9bfaa2c6d9aaf96.js": "/e-commerce-store/precache-manifest.6c5dddc0c56f4f2df9bfaa2c6d9aaf96.js",
+    "service-worker.js": "/e-commerce-store/service-worker.js",
+    "static/css/main.1b7dd74e.chunk.css.map": "/e-commerce-store/static/css/main.1b7dd74e.chunk.css.map",
+    "static/js/2.b506a541.chunk.js.LICENSE": "/e-commerce-store/static/js/2.b506a541.chunk.js.LICENSE",
+    "static/media/style.css": "/e-commerce-store/static/media/macbook-pro-table.99f60a68.jpeg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2783665b.js",
+    "static/js/2.b506a541.chunk.js",
+    "static/css/main.1b7dd74e.chunk.css",
+    "static/js/main.e7cf3f6b.chunk.js"
+  ]
+}
