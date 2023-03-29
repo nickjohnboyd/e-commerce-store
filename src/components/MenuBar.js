@@ -22,7 +22,10 @@ class MenuBar extends React.Component {
 				<Router>
 					<div className="navbar">
 						<Link to="/">
-							<div className="nav-item nav-title">WorkTech</div>
+							<div className="nav-left">
+								<div className="worktech-logo"></div>
+								<div className="nav-item nav-title">WorkTech</div>
+							</div>
 						</Link>
 						<Link to="/products">
 							<div className="shop-btn nav-item">SHOP</div>
