@@ -39,6 +39,7 @@ class MenuBar extends React.Component {
 					<div className="message-bar">Free standard shipping over $200</div>
 					<Switch>
 						<Route exact path="/" component={HomePage} />
+						<Route exact path="/e-commerce-store" component={HomePage} />
 						<Route exact path="/products" component={ProductsPage} />
 						<Route path="/login" component={LoginPage} />
 						<Route path="/cart" component={CartPage} />
